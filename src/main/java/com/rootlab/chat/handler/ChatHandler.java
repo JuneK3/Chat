@@ -25,15 +25,13 @@ public class ChatHandler extends TextWebSocketHandler {
     }
 
     @Override
-    public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        super.afterConnectionEstablished(session);
+    public void afterConnectionEstablished(WebSocketSession session) {
         webSocketSessions.add(session);
         log.info(session + " 클라이언트 접속");
     }
 
     @Override
-    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        super.afterConnectionClosed(session, status);
+    public void afterConnectionClosed(WebSocketSession session, CloseStatus status) {
         log.info(session + " 클라이언트 접속 해제");
         webSocketSessions.remove(session);
     }
