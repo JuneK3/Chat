@@ -12,6 +12,10 @@
 - https://supawer0728.github.io/2018/03/30/spring-websocket/
 - https://www.daddyprogrammer.org/post/4691/spring-websocket-chatting-server-stomp-server/
 
+### 2.1) STOMP로 실시간 화상 채팅 구현하기
+
+- https://terianp.tistory.com/146
+
 ### 3) Redis
 
 - https://www.daddyprogrammer.org/post/4731/spring-websocket-chatting-server-redis-pub-sub/
