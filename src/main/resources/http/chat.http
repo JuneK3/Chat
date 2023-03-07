@@ -1,0 +1,5 @@
+###
+POST localhost:8081/chat
+Content-Type: application/x-www-form-urlencoded
+
+name=채팅방

@@ -1,16 +1,25 @@
 package com.rootlab.chat.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import com.rootlab.chat.domain.ChatRoom;
+import com.rootlab.chat.service.ChatService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
+import java.util.List;
 
-@Controller
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/chat")
 public class ChatController {
-    @GetMapping("/chat")
-    public String chatGet(Model model) {
-        model.addAttribute("name", UUID.randomUUID().toString());
-        return "chat";
+    private final ChatService chatService;
+
+    @PostMapping
+    public ChatRoom createRoom(@RequestParam String name) {
+        return chatService.createRoom(name);
+    }
+
+    @GetMapping
+    public List<ChatRoom> findAllRoom() {
+        return chatService.findAllRoom();
     }
 }
